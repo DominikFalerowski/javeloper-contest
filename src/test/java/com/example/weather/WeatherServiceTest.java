@@ -49,12 +49,12 @@ class WeatherServiceTest {
     }
 
     @Test
-    void givenWeatherConnectorDoesNotHaveLocation_whenProcessWeather_thenShouldThrowLocationNotPresentException() {
+    void givenWeatherConnectorDoesNotHaveLocation_whenProcessWeather_thenShouldThrowWeatherLocationNotFoundException() {
         var locationName = "Warsaw";
         WeatherService weatherService = new WeatherService(weatherConnector -> Optional.empty(), new MailSenderFake(), new WeatherCache());
 
         assertThatThrownBy(() -> weatherService.processWeather(Location.of(locationName)))
-                .isInstanceOf(LocationNotPresentException.class)
+                .isInstanceOf(WeatherLocationNotFoundException.class)
                 .hasMessageContaining(locationName);
     }
 

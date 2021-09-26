@@ -15,7 +15,7 @@ class WeatherService {
     void processWeather(Location location) {
         var locationName = location.getName();
         var weather = weatherConnector.weather(locationName)
-                .orElseThrow(() -> new LocationNotPresentException(locationName));
+                .orElseThrow(() -> new WeatherLocationNotFoundException(locationName));
 
         weatherCache.add(weather);
         mailSender.sendMail(weather);
