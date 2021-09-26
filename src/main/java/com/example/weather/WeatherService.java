@@ -12,7 +12,8 @@ class WeatherService {
         this.weatherCache = weatherCache;
     }
 
-    void processWeather(String locationName) {
+    void processWeather(Location location) {
+        var locationName = location.getName();
         var weather = weatherConnector.weather(locationName)
                 .orElseThrow(() -> new LocationNotPresentException(locationName));
 

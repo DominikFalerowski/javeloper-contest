@@ -15,7 +15,7 @@ public class WeatherApp {
         var numberOfTasksToRun = locationProvider.getSize() * 20;
 
         for (int i = 0; i < numberOfTasksToRun; i++) {
-            tasks.add(Executors.callable(() -> weatherService.processWeather(locationProvider.location())));
+            tasks.add(Executors.callable(() -> weatherService.processWeather(Location.of(locationProvider.location()))));
         }
 
         executor.invokeAll(tasks);
