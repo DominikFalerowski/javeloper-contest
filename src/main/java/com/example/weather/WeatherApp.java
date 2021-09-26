@@ -1,9 +1,3 @@
-# Ailleron javeloper contest
-
-## Task to do:
-Show the elements that need to be improved in the code. Suggest your changes. This code does not compile for execution and has a lot of bugs, so they should be pointed out and corrected.
-
-```
 package com.example.weather;
 
 import java.util.HashMap;
@@ -90,5 +84,3 @@ class Weather {
     private String location;
     private double temp;
 }
-
-```
