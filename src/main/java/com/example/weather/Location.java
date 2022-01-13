@@ -6,6 +6,7 @@ import java.util.StringJoiner;
 class Location {
 
     private final String name;
+    private ClassToRemove classToRemove;
 
     private Location(String name) {
         this.name = name;
@@ -37,5 +38,9 @@ class Location {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    private static class ClassToRemove {
+
     }
 }
